@@ -10,8 +10,10 @@ public class VehicleModel {
 
     private String name;
     private VehicleBodyType bodyType;
+    private Long makeId;
 
     @ManyToOne
+    @JoinColumn(name = "makeId", insertable = false, updatable = false)
     private VehicleMake make;
 
     public Long getId() {
@@ -36,6 +38,14 @@ public class VehicleModel {
 
     public void setBodyType(VehicleBodyType bodyType) {
         this.bodyType = bodyType;
+    }
+
+    public Long getMakeId() {
+        return makeId;
+    }
+
+    public void setMakeId(Long makeId) {
+        this.makeId = makeId;
     }
 
     public VehicleMake getMake() {

@@ -9,12 +9,14 @@ public class Vehicle {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "modelId", insertable = false, updatable = false)
     private VehicleModel model;
 
     private int modelYear;
     private String color;
     private int mileage;
     private String vin;
+    private Long modelId;
 
     public Long getId() {
         return id;
@@ -62,5 +64,13 @@ public class Vehicle {
 
     public void setVin(String vin) {
         this.vin = vin;
+    }
+
+    public Long getModelId() {
+        return modelId;
+    }
+
+    public void setModelId(Long modelId) {
+        this.modelId = modelId;
     }
 }
